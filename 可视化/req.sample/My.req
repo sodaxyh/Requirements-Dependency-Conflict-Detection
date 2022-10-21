@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<req:SRS xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:req="http://www.example.org/req" ID="00" Name="My">
+  <reqs xsi:type="req:Functional_req" ID="7" Description="The evaluation model executive function can obtain the required simulation test data by data extraction according to the needs of the evaluation task." Name="Evaluation" Event="No condition" Agent="Evaluate model execution capabilities" Operation="Obtaion" Input="Assess the needs of the task" Output="Data extraction method, the required simulation test data" Restriction="Data extraction method, the required simulation test data"/>
+  <reqs xsi:type="req:Functional_req" ID="3" Description="Where over-speed protection is provided, the frequency shall be consistent with the required availability." Name="Protection" Event="When the simulation test data is obtained" Agent="Evaluate model execution capabilities" Operation="Perform" Input="Simulation test data, evaluation model developed in the evaluation process step by step" Output="The evaluation results of AHP evaluation model" Restriction="Step by step according to the evaluation process set out in the evaluation model"/>
+  <reqs xsi:type="req:Functional_req" ID="10" Description="The evaluation report generation function can output the evaluation results of the AHP evaluation model to the document in a variety of common graphics." Name="Evaluate the results" Event="No condition" Agent="Evaluation report generation" Operation="Output" Input="The evaluation results of AHP evaluation model" Output="The evaluation results of AHP evaluation model" Restriction="To histogram, graph, instrument chart and other common graphics"/>
+  <reqs xsi:type="req:Performance" ID="1" Description="Response time indicator function, the user page response time is no more than 3 seconds." Vtype="用户页面响应时间" Rtype="0" Sign="5" Value="3"/>
+  <reqs xsi:type="req:Interface_req" ID="2" Description="When get the data, assessment model need to send it to the analysis model."/>
+  <reqs xsi:type="req:Functional_req" ID="4" Description="When the Control System changes operational mode, it shall maintain the engine." Name="Mode change" Event="When the Control System the Control System changes operational mode" Agent="Control System" Operation="change" Input="None" Output="None" Restriction="the Control System changes operational mode"/>
+  <assocs xsi:type="req:Depend" target="//@reqs.0"/>
+  <assocs xsi:type="req:Interact"/>
+  <assocs xsi:type="req:Depend"/>
+  <assocs xsi:type="req:Depend" source="//@reqs.0" target="//@reqs.1"/>
+  <assocs xsi:type="req:Depend" source="//@reqs.0"/>
+  <assocs xsi:type="req:Interact" source="//@reqs.1" target="//@reqs.2"/>
+  <assocs xsi:type="req:Interact" source="//@reqs.2"/>
+  <assocs xsi:type="req:Constrain" source="//@reqs.3" target="//@reqs.0"/>
+  <assocs xsi:type="req:Realize" source="//@reqs.4" target="//@reqs.2"/>
+  <assocs xsi:type="req:Constrain" target="//@reqs.0"/>
+  <assocs xsi:type="req:Composite" target="//@reqs.0"/>
+  <assocs xsi:type="req:Composite" target="//@reqs.0"/>
+  <assocs xsi:type="req:Composite" target="//@reqs.0"/>
+  <assocs xsi:type="req:Composite" target="//@reqs.0"/>
+  <assocs xsi:type="req:Composite" source="//@reqs.5" target="//@reqs.0"/>
+  <assocs xsi:type="req:Event" source="//@reqs.1" target="//@reqs.5"/>
+</req:SRS>

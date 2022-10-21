@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="req" version="12.0.0.2017041100">
+  <ownedViewpoints name="MyReq">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Req diagram" domainClass="req::SRS" enablePopupBars="true">
+      <metamodel href="http://www.example.org/req#/"/>
+      <defaultLayer name="Default">
+        <toolSections name="Add Requirements">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Functional_req" containerMappings="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Functional_req']/@containerMappings[name='Func_Req']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="req.Functional_req" referenceName="reqs">
+                  <subModelOperations xsi:type="tool_1:SetValue"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Interface_req" containerMappings="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Interface_req']/@containerMappings[name='Inf_Req']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="req.Interface_req" referenceName="reqs">
+                  <subModelOperations xsi:type="tool_1:SetValue"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Edit_ID">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Performance_req" containerMappings="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Non-functional_req']/@containerMappings[name='Performance']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="req.Performance" referenceName="reqs">
+                  <subModelOperations xsi:type="tool_1:SetValue"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Reliability_req" containerMappings="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Non-functional_req']/@containerMappings[name='Reliability']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="req.Reliability" referenceName="reqs">
+                  <subModelOperations xsi:type="tool_1:SetValue"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Security_req" containerMappings="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Non-functional_req']/@containerMappings[name='Security']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="req.Security" referenceName="reqs">
+                  <subModelOperations xsi:type="tool_1:SetValue"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Add Relations">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Composite" edgeMappings="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Func-Func_rel']/@edgeMappings[name='Composite']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.eContainer()">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="req.Composite" referenceName="assocs">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Interact" edgeMappings="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Func-Func_rel']/@edgeMappings[name='Interact']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.eContainer()">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="req.Interact" referenceName="assocs">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Depend" edgeMappings="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Func-Func_rel']/@edgeMappings[name='Depend']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.eContainer()">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="req.Depend" referenceName="assocs">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Constrain" edgeMappings="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Func-Nonfunc_rel']/@edgeMappings[name='Constrain']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.eContainer()">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="req.Constrain" referenceName="assocs">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Realize" edgeMappings="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Func-Inf_rel']/@edgeMappings[name='Realize']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.eContainer()">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="req.Realize" referenceName="assocs">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="Reconnect_target">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="Reconnect_source" reconnectionKind="RECONNECT_SOURCE">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:target"/>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+      <additionalLayers name="Functional_req" activeByDefault="true">
+        <containerMappings name="Func_Req" domainClass="req.Functional_req" childrenPresentation="List">
+          <subNodeMappings name="Func_Req_ID" labelDirectEdit="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit_ID']" semanticCandidatesExpression="var:self" domainClass="req.Req">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'ID = '+self.ID" labelAlignment="LEFT" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Func_Req_Text" labelDirectEdit="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit_ID']" semanticCandidatesExpression="var:self" domainClass="req.Req">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'Description = '+self.Description" labelAlignment="LEFT" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="9" showIcon="false" labelExpression="&lt;&lt;Functional Req>>" widthComputationExpression="21" backgroundStyle="Liquid">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+          </style>
+        </containerMappings>
+      </additionalLayers>
+      <additionalLayers name="Non-functional_req" activeByDefault="true">
+        <containerMappings name="Performance" domainClass="req.Performance" childrenPresentation="List">
+          <subNodeMappings name="Nonfunc_Req_ID" semanticCandidatesExpression="var:self" domainClass="req.Req">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'ID = '+self.ID" labelAlignment="LEFT" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Nonfunc_Req_Text" labelDirectEdit="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit_ID']" semanticCandidatesExpression="var:self" domainClass="req.Req">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'Description = '+self.Description" labelAlignment="LEFT" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="9" showIcon="false" labelExpression="&lt;&lt;Performance Req>>" widthComputationExpression="23" backgroundStyle="Liquid">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="Reliability" domainClass="req.Reliability" childrenPresentation="List">
+          <subNodeMappings name="Nonfunc_Req_ID" semanticCandidatesExpression="var:self" domainClass="req.Req">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'ID = '+self.ID" labelAlignment="LEFT" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Nonfunc_Req_Text" labelDirectEdit="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit_ID']" semanticCandidatesExpression="var:self" domainClass="req.Req">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'Description = '+self.Description" labelAlignment="LEFT" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="9" showIcon="false" labelExpression="&lt;&lt;Reliability Req>>" widthComputationExpression="20" backgroundStyle="Liquid">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="Security" domainClass="req.Security" childrenPresentation="List">
+          <subNodeMappings name="Nonfunc_Req_ID" semanticCandidatesExpression="var:self" domainClass="req.Req">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'ID = '+self.ID" labelAlignment="LEFT" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Nonfunc_Req_Text" labelDirectEdit="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit_ID']" semanticCandidatesExpression="var:self" domainClass="req.Req">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'Description = '+self.Description" labelAlignment="LEFT" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="9" showIcon="false" labelExpression="&lt;&lt;Security Req>>" widthComputationExpression="19" backgroundStyle="Liquid">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </containerMappings>
+      </additionalLayers>
+      <additionalLayers name="Interface_req" activeByDefault="true">
+        <containerMappings name="Inf_Req" domainClass="req.Interface_req" childrenPresentation="List">
+          <subNodeMappings name="Inf_Req_ID" semanticCandidatesExpression="var:self" domainClass="req.Req">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'ID = '+self.ID" labelAlignment="LEFT" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Inf_Req_Text" semanticCandidatesExpression="var:self" domainClass="req.Req">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'Description = '+self.Description" labelAlignment="LEFT" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="9" showIcon="false" labelExpression="&lt;&lt;Interface Req>>" widthComputationExpression="20" backgroundStyle="Liquid">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+      </additionalLayers>
+      <additionalLayers name="Func-Func_rel" activeByDefault="true">
+        <edgeMappings name="Composite" sourceMapping="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Functional_req']/@containerMappings[name='Func_Req']" targetMapping="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Functional_req']/@containerMappings[name='Func_Req']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="req.Composite" useDomainElement="true" reconnections="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Reconnect_target'] //@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Reconnect_source']">
+          <style targetArrow="OutputFillClosedArrow" sizeComputationExpression="2" routingStyle="tree" foldingStyle="SOURCE">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            <centerLabelStyleDescription showIcon="false">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Interact" sourceMapping="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Functional_req']/@containerMappings[name='Func_Req']" targetMapping="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Functional_req']/@containerMappings[name='Func_Req']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="req.Interact" useDomainElement="true" reconnections="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Reconnect_target'] //@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Reconnect_source']">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="&lt;&lt;Interact>>">
+              <labelFormat>bold</labelFormat>
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Depend" sourceMapping="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Functional_req']/@containerMappings[name='Func_Req']" targetMapping="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Functional_req']/@containerMappings[name='Func_Req']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="req.Depend" useDomainElement="true" reconnections="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Reconnect_target'] //@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Reconnect_source']">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="&lt;&lt;Depend>>">
+              <labelFormat>bold</labelFormat>
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
+      <additionalLayers name="Func-Nonfunc_rel" activeByDefault="true">
+        <edgeMappings name="Constrain" sourceMapping="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Non-functional_req']/@containerMappings[name='Performance'] //@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Non-functional_req']/@containerMappings[name='Reliability'] //@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Non-functional_req']/@containerMappings[name='Security']" targetMapping="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Functional_req']/@containerMappings[name='Func_Req']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="req.Constrain" useDomainElement="true" reconnections="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Reconnect_target'] //@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Reconnect_source']">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="&lt;&lt;Constrain>>">
+              <labelFormat>bold</labelFormat>
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
+      <additionalLayers name="Func-Inf_rel" activeByDefault="true">
+        <edgeMappings name="Realize" sourceMapping="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Interface_req']/@containerMappings[name='Inf_Req']" targetMapping="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Functional_req']/@containerMappings[name='Func_Req']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="req.Realize" useDomainElement="true" reconnections="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Reconnect_target'] //@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Reconnect_source']">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="&lt;&lt;Realize>>">
+              <labelFormat>bold</labelFormat>
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
+      <additionalLayers name="Conflicts" activeByDefault="true">
+        <edgeMappings name="Operation_inconsistency" sourceMapping="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Functional_req']/@containerMappings[name='Func_Req']" targetMapping="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Functional_req']/@containerMappings[name='Func_Req']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="req.Operation" useDomainElement="true">
+          <style sourceArrow="FillDiamond" targetArrow="FillDiamond" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="! Operation_inconsistency">
+              <labelFormat>bold</labelFormat>
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Restriction_inconsistency" sourceMapping="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Functional_req']/@containerMappings[name='Func_Req'] //@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Non-functional_req']/@containerMappings[name='Performance']" targetMapping="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Functional_req']/@containerMappings[name='Func_Req'] //@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Non-functional_req']/@containerMappings[name='Performance']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="req.Restriction" useDomainElement="true">
+          <style sourceArrow="FillDiamond" targetArrow="FillDiamond" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="! Restriction_inconsistency">
+              <labelFormat>bold</labelFormat>
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Event_inconsistency" sourceMapping="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Functional_req']/@containerMappings[name='Func_Req']" targetMapping="//@ownedViewpoints[name='MyReq']/@ownedRepresentations[name='Req%20diagram']/@additionalLayers[name='Functional_req']/@containerMappings[name='Func_Req']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="req.Event" useDomainElement="true">
+          <style sourceArrow="FillDiamond" targetArrow="FillDiamond" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="! Event_inconsistency">
+              <labelFormat>bold</labelFormat>
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Functional_req Table" domainClass="req::SRS">
+      <ownedLineMappings name="ReqLine" domainClass="req.Functional_req" headerLabelExpression="aql:'ID = '+self.ID"/>
+      <ownedColumnMappings name="Name" headerLabelExpression="Name" featureName="Name"/>
+      <ownedColumnMappings name="Description" headerLabelExpression="Description" featureName="Description"/>
+      <ownedColumnMappings name="Event" headerLabelExpression="Event" featureName="Event"/>
+      <ownedColumnMappings name="Agent" headerLabelExpression="Agent" featureName="Agent"/>
+      <ownedColumnMappings name="Operation" headerLabelExpression="Operation" featureName="Operation"/>
+      <ownedColumnMappings name="Input" headerLabelExpression="Input" featureName="Input"/>
+      <ownedColumnMappings name="Output" headerLabelExpression="Output" featureName="Output"/>
+      <ownedColumnMappings name="Restriction" headerLabelExpression="Restriction" featureName="Restriction"/>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Interface_req Table" domainClass="req::SRS">
+      <ownedLineMappings name="ReqLine" domainClass="req.Functional_req" headerLabelExpression="aql:'ID = '+self.ID"/>
+      <ownedColumnMappings name="Name" headerLabelExpression="Name" featureName="Name"/>
+      <ownedColumnMappings name="Description" headerLabelExpression="Description" featureName="Description"/>
+      <ownedColumnMappings name="Receiver" headerLabelExpression="Receiver" featureName="Receiver"/>
+      <ownedColumnMappings name="Sender" headerLabelExpression="Sender" featureName="Sender"/>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="my.req.design.Services"/>
+  </ownedViewpoints>
+</description:Group>

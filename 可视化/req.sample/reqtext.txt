@@ -1,0 +1,6 @@
+When get data, assessment model shall need to send it to analysis model.
+The evaluation report generation function shall output evaluation results of AHP evaluation model to document in a variety of common graphics.
+the user page response time is no more than 3 seconds.
+The evaluation model executive function shall obtain required simulation test data by data extraction according to needs of evaluation task.
+While obtaining simulation test data, the evaluation model shall gradually execute process of calculation model.
+
