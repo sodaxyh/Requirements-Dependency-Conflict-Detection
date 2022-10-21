@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="req" nsURI="http://www.example.org/req" nsPrefix="req">
+  <eClassifiers xsi:type="ecore:EClass" name="Req" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Interface_req" eSuperTypes="#//Req">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Receiver" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Sender" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Nonfunctional_req" abstract="true" eSuperTypes="#//Req">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Vtype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Functional_req" eSuperTypes="#//Req">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Event" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Agent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Operation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Input" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Output" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Restriction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Assoc" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Req"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//Req"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SRS">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reqs" upperBound="-1" eType="#//Req"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assocs" upperBound="-1"
+        eType="#//Assoc" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Abnormal" abstract="true" eSuperTypes="#//Assoc"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Normal" abstract="true" eSuperTypes="#//Assoc"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Realize" eSuperTypes="#//Extension"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Constrain" eSuperTypes="#//Extension"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Depend" eSuperTypes="#//Extension"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Composite" eSuperTypes="#//SysML"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Interact" eSuperTypes="#//Extension"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//Inconsistency"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Restriction" eSuperTypes="#//Inconsistency"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//Inconsistency"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Input_output" eSuperTypes="#//Interlock"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Performance" eSuperTypes="#//Nonfunctional_req">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Rtype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Sign" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reliability" eSuperTypes="#//Nonfunctional_req">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Sign1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Sign2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Pr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Security" eSuperTypes="#//Nonfunctional_req"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation_event" eSuperTypes="#//Interlock"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Inconsistency" abstract="true" eSuperTypes="#//Abnormal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Interlock" abstract="true" eSuperTypes="#//Abnormal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Extension" abstract="true" eSuperTypes="#//Normal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SysML" abstract="true" eSuperTypes="#//Normal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DeriveReqt" eSuperTypes="#//SysML"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Copy" eSuperTypes="#//SysML"/>
+</ecore:EPackage>

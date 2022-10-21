@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/metamodel.req/src-gen" creationIcons="false" editDirectory="/metamodel.req.edit/src-gen"
+    editorDirectory="/metamodel.req.editor/src-gen" modelPluginID="metamodel.req"
+    modelName="Req" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>req.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Req" basePackage="metamodel" disposableProviderFactory="true"
+      ecorePackage="req.ecore#/">
+    <genClasses ecoreClass="req.ecore#//Req">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Req/ID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Req/Description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Req/Name"/>
+    </genClasses>
+    <genClasses ecoreClass="req.ecore#//Interface_req">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Interface_req/Receiver"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Interface_req/Sender"/>
+    </genClasses>
+    <genClasses ecoreClass="req.ecore#//Nonfunctional_req">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Nonfunctional_req/Vtype"/>
+    </genClasses>
+    <genClasses ecoreClass="req.ecore#//Functional_req">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Functional_req/Event"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Functional_req/Agent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Functional_req/Operation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Functional_req/Input"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Functional_req/Output"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Functional_req/Restriction"/>
+    </genClasses>
+    <genClasses ecoreClass="req.ecore#//Assoc">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference req.ecore#//Assoc/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference req.ecore#//Assoc/target"/>
+    </genClasses>
+    <genClasses ecoreClass="req.ecore#//SRS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference req.ecore#//SRS/reqs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//SRS/ID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//SRS/Name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference req.ecore#//SRS/assocs"/>
+    </genClasses>
+    <genClasses ecoreClass="req.ecore#//Abnormal"/>
+    <genClasses ecoreClass="req.ecore#//Normal"/>
+    <genClasses ecoreClass="req.ecore#//Realize"/>
+    <genClasses ecoreClass="req.ecore#//Constrain"/>
+    <genClasses ecoreClass="req.ecore#//Depend"/>
+    <genClasses ecoreClass="req.ecore#//Composite"/>
+    <genClasses ecoreClass="req.ecore#//Interact"/>
+    <genClasses ecoreClass="req.ecore#//Operation"/>
+    <genClasses ecoreClass="req.ecore#//Restriction"/>
+    <genClasses ecoreClass="req.ecore#//Event"/>
+    <genClasses ecoreClass="req.ecore#//Input_output"/>
+    <genClasses ecoreClass="req.ecore#//Performance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Performance/Rtype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Performance/Sign"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Performance/Value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Performance/Unit"/>
+    </genClasses>
+    <genClasses ecoreClass="req.ecore#//Reliability">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Reliability/Sign1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Reliability/Sign2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Reliability/Duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute req.ecore#//Reliability/Pr"/>
+    </genClasses>
+    <genClasses ecoreClass="req.ecore#//Security"/>
+    <genClasses ecoreClass="req.ecore#//Operation_event"/>
+    <genClasses ecoreClass="req.ecore#//Inconsistency"/>
+    <genClasses ecoreClass="req.ecore#//Interlock"/>
+    <genClasses image="false" ecoreClass="req.ecore#//Extension"/>
+    <genClasses image="false" ecoreClass="req.ecore#//SysML"/>
+    <genClasses ecoreClass="req.ecore#//DeriveReqt"/>
+    <genClasses ecoreClass="req.ecore#//Copy"/>
+  </genPackages>
+</genmodel:GenModel>
