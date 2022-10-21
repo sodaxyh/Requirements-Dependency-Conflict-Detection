@@ -1,0 +1,50 @@
+grammar org.xtext.ReqTxt with org.eclipse.xtext.common.Terminals
+
+generate reqTxt "http://www.xtext.org/ReqTxt"
+
+Model:
+   reqs+=ReqDes*;
+   
+ReqDes:
+   name=Condition Response '.';
+
+//<optional preconditions><optional trigger>
+Condition:
+   (ConWhen | ConWhile | ConWhere | ConIf)*;
+
+ConWhen:
+	WHEN PreTrigger (',')?;
+ConIf:
+	IF PreTrigger (',')?;
+ConWhile:
+	WHILE State (',')?;
+ConWhere:
+	WHERE Feature (',')?;
+	
+//the <system name> shall <system response>
+Response:
+   ('the')? SysName 'shall' SysRes;
+
+
+
+PreTrigger: OTHER;
+State: OTHER;
+Feature: OTHER;
+SysName: OTHER;
+SysRes: OTHER;
+
+//关键词包括 when where if while
+WHEN:
+   'When' | 'when';
+WHERE:
+   'Where' | 'where';
+IF:
+   'If' | 'if';
+WHILE:
+   'While' | 'while';
+
+//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+OTHER:
+   ID+;
+   
+
